@@ -17,6 +17,7 @@ class TaskView(APIView):
         description = data.get('description')
         start_date = data.get('startDate')
         end_date = data.get('endDate')
+        project = data.get('project')
 
         if not title or not description:
             return Response(
@@ -27,12 +28,20 @@ class TaskView(APIView):
             )
 
         service = TaskService(TaskRepository())
-        task = service.add_task(title, description, start_date, end_date)
+        task = service.add_task(title, description, start_date, end_date, project)
+
+        if isinstance(task, dict) and task.get("error"):
+            return Response(task, status=400)
         
         return Response({
-            "id": task.id,
             "title": task.title,
-            "description": task.description
+            "description": task.description,
+            "startDate": task.startDate,
+            "endDate": task.endDate,
+            "project": {
+                "id": task.project.id,
+                "title": task.project.title,
+            }
         })
     
     def get(self, request):

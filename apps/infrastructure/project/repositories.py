@@ -8,4 +8,4 @@ class ProjectRepository:
         )
     
     def get_all_project(self):
-        return ProjectModel.objects.raw('SELECT * FROM projects_projectmodel')
+        return ProjectModel.objects.raw('SELECT * FROM project_projectmodel')
