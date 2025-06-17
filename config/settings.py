@@ -2,6 +2,7 @@ from pathlib import Path
 import sys
 import os
 from .database_config import DATABASES
+from decouple import config
 
 # เปลี่ยน BASE_DIR ให้เป็น Path object
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,7 +37,7 @@ INSTALLED_APPS += autodiscover_apps(BASE_DIR)
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5+=%jd(g0%u4$1b57e*f3ol)isw)#xuk0y)=@2&4xbcj1md=0u'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
