@@ -5,7 +5,7 @@ class ProjectModel(models.Model):
     description = models.TextField(max_length=500)
 
     def __str__(self):
-        return self.description
+        return self.title
 
     class Meta:
         app_label = 'projects'
