@@ -8,3 +8,7 @@ class ProjectService:
     def add_project(self, title, description):
         project = ProjectModel(title=title, description=description)
         return self.repository.create(project)
+
+    def get_all_project(self):
+        return ProjectModel.objects.raw('SELECT * FROM projects_projectmodel')
+        
