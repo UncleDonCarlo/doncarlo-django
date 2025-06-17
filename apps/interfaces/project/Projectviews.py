@@ -35,3 +35,12 @@ class ProjectUserView(APIView):
                 "description": project.description
             }
         )
+    
+    def get(self, request):
+        service = ProjectService(ProjectRepository())
+        projects = service.get_all_project()
+        serializer = self.serializer_class(projects, many=True)
+
+        return Response({
+            "data": serializer.data
+        })

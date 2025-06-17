@@ -6,3 +6,6 @@ class ProjectRepository:
             title=project_entity.title,
             description=project_entity.description,
         )
+    
+    def get_all_project(self):
+        return ProjectModel.objects.raw('SELECT * FROM projects_projectmodel')

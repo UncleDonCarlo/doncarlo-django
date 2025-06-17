@@ -10,5 +10,5 @@ class ProjectService:
         return self.repository.create(project)
 
     def get_all_project(self):
-        return ProjectModel.objects.raw('SELECT * FROM projects_projectmodel')
+        return self.repository.get_all_project()
         
