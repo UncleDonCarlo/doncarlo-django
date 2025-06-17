@@ -1,5 +1,5 @@
-from projects.domain.models import ProjectModel
-from projects.infrastructure.repositories import ProjectRepository
+from apps.domain.project.models import ProjectModel
+from apps.infrastructure.project.repositories import ProjectRepository
 
 class ProjectService:
     def __init__(self, repository: ProjectRepository):

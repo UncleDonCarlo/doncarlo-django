@@ -1,4 +1,4 @@
-from projects.domain.models import ProjectModel
+from apps.domain.project.models import ProjectModel
 
 class ProjectRepository:
     def create(self, project_entity):

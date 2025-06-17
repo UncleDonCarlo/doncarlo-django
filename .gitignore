@@ -29,17 +29,6 @@ staticfiles/
 # Ignore config cache folders explicitly
 config/__pycache__/
 
-# Ignore application cache folders explicitly
-apps/projects/application/__pycache__/
-
-# Ignore other cache folders explicitly
-apps/projects/domain/__pycache__/
-apps/projects/infrastructure/__pycache__/
-apps/projects/interfaces/__pycache__/
-apps/projects/migrations/__pycache__/
-apps/projects/tests/__pycache__/
-apps/projects/migrations/
-
 # PyCharm IDE
 .idea/
 
