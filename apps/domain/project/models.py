@@ -8,4 +8,4 @@ class ProjectModel(models.Model):
         return self.title
 
     class Meta:
-        app_label = 'projects'
+        app_label = 'project'

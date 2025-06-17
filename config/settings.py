@@ -9,12 +9,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 def autodiscover_apps(base_dir):
     apps = []
-    apps_dir = base_dir / 'apps'   # เพราะ base_dir เป็น Path เลยใช้ / ต่อ path ได้
+    apps_dir = base_dir / 'apps'
     if apps_dir.exists():
-        for app_name in os.listdir(apps_dir):
-            app_path = apps_dir / app_name
-            if app_path.is_dir() and (app_path / 'apps.py').is_file():
-                apps.append(f'apps.{app_name}')
+        for path in apps_dir.rglob('apps.py'):
+            print(path)
+            relative_path = path.parent.relative_to(apps_dir)
+            module_path = ".".join(['apps'] + list(relative_path.parts))
+            apps.append(module_path)
     return apps
 
 # Add 'apps' folder to sys.path

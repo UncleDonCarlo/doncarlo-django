@@ -18,6 +18,10 @@ urlpatterns = [
     path('api/docs/redoc', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
     path('api/projects', include('interfaces.project.urls')),
+    path('api/tasks', include('interfaces.task.urls')),
+
+
+
     path('api/login', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
 ]
