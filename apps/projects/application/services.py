@@ -6,5 +6,5 @@ class ProjectService:
         self.repository = repository
 
     def add_project(self, title, description):
-        user = ProjectModel(title=title, description=description)
-        return self.repository.create(user)
+        project = ProjectModel(title=title, description=description)
+        return self.repository.create(project)
