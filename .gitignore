@@ -1,1 +1,49 @@
+# Python Bytecode and Cache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+
+# Environment variables file
 .env
+
+# VSCode settings
+.vscode/
+
+# Database files
+*.sqlite3
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+db.sqlite3
+
+# Media and static files (ถ้าไม่อยากเก็บ)
+media/
+staticfiles/
+
+# Django migrations (ถ้าต้องการไม่เก็บ)
+# apps/*/migrations/*.pyc
+# apps/*/migrations/__pycache__/
+
+# Ignore config cache folders explicitly
+config/__pycache__/
+
+# Ignore application cache folders explicitly
+apps/projects/application/__pycache__/
+
+# Ignore other cache folders explicitly
+apps/projects/domain/__pycache__/
+apps/projects/infrastructure/__pycache__/
+apps/projects/interfaces/__pycache__/
+apps/projects/migrations/__pycache__/
+apps/projects/tests/__pycache__/
+
+# PyCharm IDE
+.idea/
+
+# Mac OS files
+.DS_Store
+
+# Windows Thumbs.db
+Thumbs.db
