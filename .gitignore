@@ -38,6 +38,7 @@ apps/projects/infrastructure/__pycache__/
 apps/projects/interfaces/__pycache__/
 apps/projects/migrations/__pycache__/
 apps/projects/tests/__pycache__/
+apps/projects/migrations/
 
 # PyCharm IDE
 .idea/
